@@ -55,9 +55,6 @@ function Portfolio() {
                     alt={`Antes - ${item.title}`} 
                     className="w-full h-48 sm:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-                    <span className="text-white bg-black/50 px-3 py-1 rounded-lg text-sm font-semibold backdrop-blur-sm">🔍 Ampliar</span>
-                  </div>
                 </div>
                 
                 {/* Divisor Visual (apenas para telas sm+) */}
@@ -77,9 +74,6 @@ function Portfolio() {
                     alt={`Depois - ${item.title}`} 
                     className="w-full h-48 sm:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-                    <span className="text-white bg-black/50 px-3 py-1 rounded-lg text-sm font-semibold backdrop-blur-sm">🔍 Ampliar</span>
-                  </div>
                 </div>
               </div>
               
