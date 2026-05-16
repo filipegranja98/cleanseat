@@ -18,7 +18,7 @@ function BookingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const phoneNumber = "5581984910495"; 
+    const phoneNumber = "558193113251";
     const message = `Olá CleanSeat! Gostaria de agendar uma higienização.\n\n*Meus Dados:*\nNome: ${formData.nome}\nEndereço: ${formData.endereco}\nHorário de Preferência: ${formData.dataHorario}`;
     
     const encodedMessage = encodeURIComponent(message);

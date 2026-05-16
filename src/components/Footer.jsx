@@ -10,7 +10,7 @@ function Footer() {
         </div>
         <div>
           <h4 className="text-white text-xl font-bold mb-4">Contato</h4>
-          <p className="text-slate-300 mb-2">WhatsApp: (81) 98491-0495</p>
+          <p className="text-slate-300 mb-2">WhatsApp: (81) 9311-3251</p>
           <p className="text-slate-300 mb-2">
             Instagram: <a href="https://www.instagram.com/clenseat/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@clenseat</a>
           </p>
