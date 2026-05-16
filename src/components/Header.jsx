@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '../assets/logo.png';
 
 function Header() {
   return (
@@ -6,7 +7,7 @@ function Header() {
       <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center">
         <div className="flex-shrink-0 transition-transform hover:scale-105">
           <a href="https://www.instagram.com/clenseat/" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/logo.png" alt="CleanSeat Logo" className="h-20 md:h-28 w-auto object-contain cursor-pointer" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/150x50/0077B6/FFFFFF?text=CleanSeat"; }} />
+            <img src={logoImg} alt="CleanSeat Logo" className="h-20 md:h-28 w-auto object-contain cursor-pointer" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/150x50/0077B6/FFFFFF?text=CleanSeat"; }} />
           </a>
         </div>
         <nav className="hidden md:block">

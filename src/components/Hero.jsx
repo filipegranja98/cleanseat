@@ -1,4 +1,5 @@
 import React from 'react';
+import maquinaImg from '../assets/maquina.png';
 
 function Hero() {
   return (
@@ -27,11 +28,11 @@ function Hero() {
           {/* Card circular com a máquina */}
           <div className="relative w-full max-w-[450px] aspect-square rounded-full bg-gradient-to-b from-white to-[#F0F9FF] border-4 border-white shadow-[0_20px_50px_rgba(0,119,182,0.15)] flex items-center justify-center p-8 group">
             <img
-              src="/src/assets/maquina.png"
+              src={maquinaImg}
               alt="Máquina Extratora de Higienização"
               className="w-full h-auto object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.25)] group-hover:scale-105 transition-transform duration-700 ease-out z-10"
               onError={(e) => {
-                e.target.src = "/src/assets/maquina.png";
+                e.target.src = maquinaImg;
               }}
             />
           </div>

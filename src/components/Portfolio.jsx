@@ -1,25 +1,31 @@
 import React from 'react';
+import antesSofa1 from '../assets/portifolio/antessofa1.jpeg';
+import depoisSofa1 from '../assets/portifolio/depoissofa1.jpeg';
+import antesCadeira from '../assets/portifolio/antescadeira.jpeg';
+import depoisCadeira from '../assets/portifolio/depoiscadeira.jpeg';
+import antesSofa2 from '../assets/portifolio/antessofa2.jpeg';
+import depoisSofa2 from '../assets/portifolio/depoissofa2.jpeg';
 
 function Portfolio() {
   const portfolioItems = [
     { 
       id: 1, 
-      antes: '/src/assets/portifolio/antessofa1.jpeg', 
-      depois: '/src/assets/portifolio/depoissofa1.jpeg', 
+      antes: antesSofa1, 
+      depois: depoisSofa1, 
       title: 'Sofá Retrátil', 
       desc: 'Limpeza e remoção de manchas' 
     },
     { 
       id: 2, 
-      antes: '/src/assets/portifolio/antescadeira.jpeg', 
-      depois: '/src/assets/portifolio/depoiscadeira.jpeg', 
+      antes: antesCadeira, 
+      depois: depoisCadeira, 
       title: 'Cadeiras de Jantar', 
       desc: 'Higienização profunda de tecido claro' 
     },
     { 
       id: 3, 
-      antes: '/src/assets/portifolio/antessofa2.jpeg', 
-      depois: '/src/assets/portifolio/depoissofa2.jpeg', 
+      antes: antesSofa2, 
+      depois: depoisSofa2, 
       title: 'Sofá 2 Lugares', 
       desc: 'Remoção de ácaros e odores' 
     }
