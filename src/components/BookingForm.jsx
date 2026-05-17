@@ -4,7 +4,8 @@ function BookingForm() {
   const [formData, setFormData] = useState({
     nome: '',
     endereco: '',
-    dataHorario: ''
+    data: '',
+    horario: ''
   });
 
   const handleChange = (e) => {
@@ -19,7 +20,11 @@ function BookingForm() {
     e.preventDefault();
     
     const phoneNumber = "558193113251";
-    const message = `Olá CleanSeat! Gostaria de agendar uma higienização.\n\n*Meus Dados:*\nNome: ${formData.nome}\nEndereço: ${formData.endereco}\nHorário de Preferência: ${formData.dataHorario}`;
+    
+    // Formata a data de YYYY-MM-DD para DD/MM/YYYY
+    const dataFormatada = formData.data.split('-').reverse().join('/');
+    
+    const message = `Olá CleanSeat! Gostaria de agendar uma higienização.\n\n*Meus Dados:*\nNome: ${formData.nome}\nEndereço: ${formData.endereco}\nData de Preferência: ${dataFormatada}\nHorário: ${formData.horario}`;
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -74,18 +79,37 @@ function BookingForm() {
                 ></textarea>
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="dataHorario" className="block mb-2 font-medium text-slate-800">Data e Horário de Preferência</label>
-                <input 
-                  type="text" 
-                  id="dataHorario" 
-                  name="dataHorario" 
-                  value={formData.dataHorario} 
-                  onChange={handleChange} 
-                  required 
-                  placeholder="Ex: 25/10 pela manhã"
-                  className="w-full p-3 border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:border-secondary focus:bg-white focus:ring-4 focus:ring-secondary/10 transition-all"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                <div>
+                  <label htmlFor="data" className="block mb-2 font-medium text-slate-800">Data de Preferência</label>
+                  <input 
+                    type="date" 
+                    id="data" 
+                    name="data" 
+                    value={formData.data} 
+                    onChange={handleChange} 
+                    min={new Date().toISOString().split('T')[0]}
+                    required 
+                    className="w-full p-3 border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:border-secondary focus:bg-white focus:ring-4 focus:ring-secondary/10 transition-all text-slate-700"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="horario" className="block mb-2 font-medium text-slate-800">Horário de Preferência</label>
+                  <select 
+                    id="horario" 
+                    name="horario" 
+                    value={formData.horario} 
+                    onChange={handleChange} 
+                    required 
+                    className="w-full p-3 border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:border-secondary focus:bg-white focus:ring-4 focus:ring-secondary/10 transition-all text-slate-700"
+                  >
+                    <option value="" disabled>Selecione um período</option>
+                    <option value="Manhã (08:00 - 12:00)">Manhã (08:00 - 12:00)</option>
+                    <option value="Tarde (13:00 - 18:00)">Tarde (13:00 - 18:00)</option>
+                    <option value="Noite (Após 18:00)">Noite (Após 18:00)</option>
+                    <option value="A combinar com o técnico">A combinar com o técnico</option>
+                  </select>
+                </div>
               </div>
               
               <button type="submit" className="w-full flex items-center justify-center px-6 py-4 rounded-xl font-semibold transition-all bg-[#25D366] text-white shadow-md hover:bg-[#128C7E] hover:-translate-y-0.5 text-lg">
